@@ -9,12 +9,8 @@
 
 // Another way using split and reverse functions
 const reverseString = function (string) {
-  string = string.split("");
-  string = string.reverse().join("");
-  return string;
+  return string.split("").reverse().join("");
 };
-
-console.log(reverseString("mohamed"));
 
 // Do not edit below this line
 module.exports = reverseString;
