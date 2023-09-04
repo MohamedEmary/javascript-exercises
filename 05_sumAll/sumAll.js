@@ -1,5 +1,6 @@
 const sumAll = function (start, end) {
-  if (typeof start !== "number" || typeof end !== "number") return "ERROR";
+  // This is an improved solution see my old solution in last commit
+  if (!Number.isInteger(start) || !Number.isInteger(end)) return "ERROR";
   if (start < 0 || end < 0) return "ERROR";
   // if start is larger than end, swap them
   if (start > end) [start, end] = [end, start];
