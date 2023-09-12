@@ -11,16 +11,26 @@
 //   return newArr;
 // };
 
-// Another Way is just to delete the elements of removeElements
-// from Arr
+// // Another Way is just to delete the elements of removeElements
+// // from Arr
+// const removeFromArray = function (arr, ...removeElements) {
+//   for (let i of removeElements) {
+//     while (arr.indexOf(i) !== -1) {
+//       arr.splice(arr.indexOf(i), 1); // remove that element from the array
+//     }
+//   }
+//   return arr;
+// };
+
 const removeFromArray = function (arr, ...removeElements) {
-  for (let i of removeElements) {
-    while (arr.indexOf(i) !== -1) {
-      arr.splice(arr.indexOf(i), 1); // remove that element from the array
+  let newArr = arr.filter((element) => {
+    if (!removeElements.includes(element)) {
+      return element;
     }
-  }
-  return arr;
+  });
+  return newArr;
 };
 
+console.log(removeFromArray([1, 2, 3, 4], 7, "tacos"));
 // Do not edit below this line
 module.exports = removeFromArray;
